@@ -22,6 +22,7 @@
 
 import CoreGraphics
 import Foundation
+import UIKit
 
 public extension QRCode {
 	/// Represents the style when drawing the qr code
@@ -31,7 +32,7 @@ public extension QRCode {
 		@objc public static func create() -> Style { return Style() }
 
 		/// The style for the data component for the QR code. Defaults to black
-		@objc public var data: QRCodeFillStyleGenerator = QRCode.FillStyle.Solid(CGColor(gray: 0.0, alpha: 1.0))
+        @objc public var data: QRCodeFillStyleGenerator = QRCode.FillStyle.Solid(UIColor(white: 0.0, alpha: 1.0).cgColor)
 		/// The style for drawing the non-drawn sections for the qr code.
 		@objc public var dataInverted: QRCodeFillStyleGenerator?
 
@@ -41,7 +42,7 @@ public extension QRCode {
 		@objc public var pupil: QRCodeFillStyleGenerator?
 
 		/// The background style for the QR code. If nil, no background is drawn. Defaults to white
-		@objc public var background: QRCodeFillStyleGenerator? = QRCode.FillStyle.Solid(CGColor(gray: 1.0, alpha: 1.0))
+        @objc public var background: QRCodeFillStyleGenerator? = QRCode.FillStyle.Solid(UIColor(white: 1.0, alpha: 1.0).cgColor)
 
 		/// Copy the style
 		public func copyStyle() -> Style {

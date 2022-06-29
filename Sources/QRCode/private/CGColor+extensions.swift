@@ -22,6 +22,7 @@
 
 import CoreGraphics
 import Foundation
+import UIKit
 
 // Default colorspace for RGBA archiving/unarchiving
 private let ArchiveRGBAColorSpace = CGColorSpace(name: CGColorSpace.sRGB)!
@@ -81,8 +82,8 @@ public extension CGColor {
 
 #if !os(macOS)
 extension CGColor {
-	static let white = CGColor(gray: 1, alpha: 1)
-	static let black = CGColor(gray: 0, alpha: 1)
-	static let clear = CGColor(gray: 0, alpha: 0)
+    static let white = UIColor(white: 1, alpha: 1).cgColor
+	static let black = UIColor(white: 0, alpha: 1).cgColor
+	static let clear = UIColor(white: 0, alpha: 0).cgColor
 }
 #endif
